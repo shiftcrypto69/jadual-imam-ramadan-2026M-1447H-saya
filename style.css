@@ -1,109 +1,129 @@
-/* Pengesetan Asas */
+/* Pengesetan Asas - Tema Gelap Cyber */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: #0a0a0a; /* Hitam pekat */
+    color: #e0e0e0;
     display: flex;
     justify-content: center;
     padding: 40px;
     margin: 0;
 }
 
+/* Container dengan Kesan Shadow & Glow */
 .table-container {
-    background-color: white;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: #121212; /* Kelabu sangat gelap */
+    padding: 30px;
+    border-radius: 20px;
+    /* Bayang berlapis untuk kesan depth yang dalam */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5), 
+                0 0 40px rgba(75, 0, 130, 0.2); 
+    border: 1px solid rgba(255, 255, 255, 0.05);
     max-width: 950px;
 }
 
-/* Header Masjid */
-.header-masjid {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo-rasmi {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
+/* Header & Nama Masjid */
 .header-masjid h1 {
-    font-size: 22px;
-    color: #4B0082;
-    margin: 5px 0;
-    text-transform: uppercase;
+    font-size: 26px;
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glow biru cyan */
+    letter-spacing: 2px;
 }
 
 .garis-hiasan {
-    width: 50%;
-    border: 0;
-    height: 2px;
-    background: #4B0082;
-    margin: 10px auto;
+    width: 40%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #00ffff, transparent);
+    border: none;
+    margin: 20px auto;
 }
 
-/* Gaya Jadual */
+/* Gaya Jadual Robotik */
 table {
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 4px; /* Ada jarak sikit antara sel */
     width: 100%;
-    border: 2px solid #333;
+    border: none;
 }
 
 th, td {
-    border: 1px solid #000;
-    padding: 12px 8px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 13px;
+    padding: 15px 10px;
+    border-radius: 8px;
+    border: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efek Hover - Bila mouse lalu, kotak akan naik */
+td:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 thead th {
-    background-color: #FFFF00;
-    color: #000;
+    background-color: #1a1a1a;
+    color: #00ffff; /* Warna teks Cyan neon */
+    text-transform: uppercase;
+    font-size: 12px;
+    border-bottom: 2px solid #00ffff;
 }
 
 .day-cell {
-    background-color: #4B0082;
-    color: white;
-    width: 100px;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    border-left: 4px solid #4B0082;
 }
 
-/* Warna Status Khas Anda */
-.status-ok { background-color: #C8E6C9; color: #2E7D32; } /* Hijau */
-.status-tazkirah { background-color: #FFF9C4; color: #F57F17; } /* Kuning */
-.status-special { background-color: #F8BBD0; color: #C2185B; } /* Pink */
-.status-out { background-color: #BBDEFB; color: #1976D2; } /* Biru */
-.status-half { background-color: #E1BEE7; color: #7B1FA2; } /* Ungu */
-.empty { background-color: #ffffff; color: #ccc; }
+/* Warna Status (Versi Neon & Gelap) */
+.status-ok { 
+    background-color: rgba(46, 125, 50, 0.2); 
+    color: #81c784; 
+    border: 1px solid rgba(129, 199, 132, 0.3);
+}
 
-/* Butang Cetak */
+.status-tazkirah { 
+    background-color: rgba(245, 127, 23, 0.2); 
+    color: #ffd54f; 
+    border: 1px solid rgba(255, 213, 79, 0.3);
+}
+
+.status-special { 
+    background-color: rgba(194, 24, 91, 0.2); 
+    color: #f48fb1; 
+    border: 1px solid rgba(244, 143, 177, 0.3);
+}
+
+.status-out { 
+    background-color: rgba(25, 118, 210, 0.2); 
+    color: #64b5f6; 
+    border: 1px solid rgba(100, 181, 246, 0.3);
+}
+
+.status-half { 
+    background-color: rgba(123, 31, 162, 0.2); 
+    color: #ce93d8; 
+    border: 1px solid rgba(206, 147, 216, 0.3);
+}
+
+.empty { 
+    background-color: #0f0f0f; 
+    color: #333; 
+}
+
+/* Butang Cetak Futuristik */
 .print-button {
-    background-color: #4B0082;
+    background: linear-gradient(45deg, #4B0082, #00ffff);
     color: white;
-    padding: 8px 15px;
     border: none;
-    border-radius: 4px;
+    padding: 10px 20px;
+    border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
 }
 
-/* Ringkasan */
+/* Ringkasan Box */
 .ringkasan {
-    margin-top: 20px;
-    padding: 15px;
-    background: #f9f9f9;
-    border-left: 5px solid #4B0082;
-    text-align: left;
-}
-
-.ringkasan ul { list-style: none; padding: 0; }
-.footer-note { font-size: 11px; font-style: italic; color: #666; margin-top: 10px; }
-
-/* Media Print */
-@media print {
-    .no-print { display: none !important; }
-    body { background-color: white; padding: 0; }
-    .table-container { box-shadow: none; border: none; }
-    table { width: 100%; border: 2px solid black; }
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    color: #aaa;
 }
