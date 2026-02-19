@@ -19,6 +19,7 @@ body {
                 0 0 40px rgba(75, 0, 130, 0.2); 
     border: 1px solid rgba(255, 255, 255, 0.05);
     max-width: 950px;
+    text-align: center;
 }
 
 /* Header & Nama Masjid */
@@ -27,6 +28,25 @@ body {
     color: #ffffff;
     text-shadow: 0 0 10px rgba(0, 255, 255, 0.5); /* Glow biru cyan */
     letter-spacing: 2px;
+    margin-top: 10px;
+}
+
+.header-masjid h2 {
+    font-size: 18px;
+    color: #00ffff;
+    margin-bottom: 20px;
+}
+
+/* Gaya Logo Rasmi - Dikemaskini supaya Bulat & Kemas */
+.logo-rasmi {
+    width: 120px;         /* Lebar yang ideal */
+    height: 120px;        /* Tinggi yang sama */
+    object-fit: cover;    /* Gambar tidak penyek */
+    border-radius: 50%;   /* Bentuk Bulat */
+    margin-bottom: 15px;
+    border: 3px solid #00ffff; /* Neon Border */
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5); /* Glow Effect */
+    display: inline-block;
 }
 
 .garis-hiasan {
@@ -40,9 +60,10 @@ body {
 /* Gaya Jadual Robotik */
 table {
     border-collapse: separate;
-    border-spacing: 4px; /* Ada jarak sikit antara sel */
+    border-spacing: 6px; /* Jarak antara sel */
     width: 100%;
     border: none;
+    margin-top: 20px;
 }
 
 th, td {
@@ -50,18 +71,19 @@ th, td {
     border-radius: 8px;
     border: none;
     transition: transform 0.2s, box-shadow 0.2s;
+    font-weight: bold;
 }
 
-/* Efek Hover - Bila mouse lalu, kotak akan naik */
+/* Efek Hover */
 td:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 255, 255, 0.2);
     z-index: 10;
 }
 
 thead th {
     background-color: #1a1a1a;
-    color: #00ffff; /* Warna teks Cyan neon */
+    color: #00ffff;
     text-transform: uppercase;
     font-size: 12px;
     border-bottom: 2px solid #00ffff;
@@ -73,7 +95,7 @@ thead th {
     border-left: 4px solid #4B0082;
 }
 
-/* Warna Status (Versi Neon & Gelap) */
+/* Warna Status (Versi Neon Separa Telus) */
 .status-ok { 
     background-color: rgba(46, 125, 50, 0.2); 
     color: #81c784; 
@@ -114,16 +136,51 @@ thead th {
     background: linear-gradient(45deg, #4B0082, #00ffff);
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 25px;
     border-radius: 50px;
     cursor: pointer;
     font-weight: bold;
     box-shadow: 0 4px 15px rgba(0, 255, 255, 0.2);
+    transition: 0.3s;
+}
+
+.print-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 25px rgba(0, 255, 255, 0.4);
 }
 
 /* Ringkasan Box */
 .ringkasan {
+    margin-top: 30px;
+    padding: 20px;
     background: rgba(255, 255, 255, 0.03);
-    border: 1px dashed rgba(255, 255, 255, 0.1);
-    color: #aaa;
+    border: 1px dashed rgba(0, 255, 255, 0.2);
+    border-radius: 12px;
+    text-align: left;
+}
+
+.ringkasan h3 {
+    color: #00ffff;
+    margin-top: 0;
+}
+
+.ringkasan ul {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+}
+
+.footer-note {
+    font-size: 11px;
+    color: #666;
+    margin-top: 20px;
+}
+
+/* Media Print */
+@media print {
+    .no-print { display: none !important; }
+    body { background-color: white; color: black; padding: 0; }
+    .table-container { box-shadow: none; border: none; background: white; width: 100%; }
+    th, td { border: 1px solid #000; color: black !important; background: transparent !important; }
+    .logo-rasmi { border: 2px solid black; box-shadow: none; width: 80px; height: 80px; }
 }
